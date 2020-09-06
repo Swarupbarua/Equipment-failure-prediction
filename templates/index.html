@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Equipment failure prediction
+	</title>
+	<style type"text/css">
+    	#result{
+        	//background-color: #fff;
+        	width: 100%;
+        	height: 100%;
+            text-align: center;
+            font-size: 25px;
+    	}
+	</style>
+</head>
+<body background="{{ url_for('static', filename='images/background1.jpg') }}" link="#000" alink="#017bf5" vlink="#000">
+
+	<br />
+
+	<br /><br /><br /><br /><br /><br /><br />
+	<h1 align="center">
+		<font face="Lato" color="#017bf5" size="7">
+			ConocoPhillips Equipment Failure Prediction
+		</font>
+	</h1>
+	<br /> 
+	<h3 align="center">
+		<font face="Lato" color="#000" size="5">
+			Download the template, fill all 107 sensor data and upload again.
+		</font>
+	</h3>
+	<br /> <br />
+	
+	<h3 align="center">
+    	<font face="Lato" color="#000" size="4">
+			Get template here.
+		</font>
+		<a href="{{ url_for('.download_file') }}" target="blank">
+    		<button class='btn btn-default' style="height:30px;width:100px">
+        		Download
+        	</button>
+        </a>
+	</h3>
+	
+	<br /> <br />
+
+	<div align="center">
+      <form action="/predict" method="POST" enctype="multipart/form-data" id="my-form">
+        <label for="review_file" >Upload csv file</label>
+            <input type="file" name="file" id="review_file" >
+            <input type="submit" value="Upload & predict" name="submit" >
+        <br>
+      </form>
+	</div>
+	<br /> 
+    	<div id="result"></div>
+	<br />
+	
+	<script>
+    	$myForm = document.querySelector("#my-form");
+    	$myForm.addEventListener("submit", (e) => {
+        	e.preventDefault();
+        	let data = {};
+        	const formData = new FormData($myForm);
+        	console.log(formData.entries());
+        	console.log(data);
+        	fetch("/predict", {
+            	mode:'cors',
+            	method: "POST",
+            	body: formData
+        	})
+            	.then(res => res.json())
+            	.then((data) => {
+                   $result = document.querySelector("#result");
+                   $result.innerHTML = "<strong>Result: </strong>" + data.prediction;           
+             	
+            	})
+        	
+        
+    	});
+	</script>
+	
+
+</body>
+</html>
