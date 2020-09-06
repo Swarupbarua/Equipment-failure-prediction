@@ -17,11 +17,11 @@ https://www.kaggle.com/c/equipfails/data
   - app.py
 
 Below are some modeling i have implemented.
-  a. Logistic regression
-  b. Random forest
-  c. XgBoost
-  d. Ensemble model (using LSTM and Conv1D)
-  e. Hybrid model (usin LSTM and RF)
+  - Logistic regression
+  - Random forest
+  - XgBoost
+  - Ensemble model (using LSTM and Conv1D)
+  - Hybrid model (usin LSTM and RF)
   
 Among all the above models XgBoost perform the best and achived 85% f1 score.
 
