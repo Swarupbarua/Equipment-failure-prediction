@@ -1,5 +1,5 @@
 # Equipment-failure-prediction
-ConocoPhilips Equipment Failure Prediction
+# ConocoPhilips Equipment Failure Prediction
 
 ### Here i have solved Conocophilips equipment failure problem using Machine learning and Deep learning.
 
@@ -25,5 +25,5 @@ Below are some modeling i have implemented.
   
 Among all the above models XgBoost perform the best and achived 85% f1 score.
 
-### In app.py file i have used flask to delopy my model.
+### In app.py file i have used flask to deploy my model.
 <img src='https://github.com/Swarupbarua/Equipment-failure-prediction/blob/master/web.PNG?raw=true' width="800" height="400" />
