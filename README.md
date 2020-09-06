@@ -27,3 +27,6 @@ Among all the above models XgBoost perform the best and achived 85% f1 score.
 
 ### In app.py file i have used flask to deploy my model.
 <img src='https://github.com/Swarupbarua/Equipment-failure-prediction/blob/master/web.PNG?raw=true' width="800" height="400" />
+
+First download the template csv file from the above page. Fill all the sensor data and submit. Output will be displayed.
+<img src='https://github.com/Swarupbarua/Equipment-failure-prediction/blob/master/result.PNG?raw=true' width="800" height="400" />
